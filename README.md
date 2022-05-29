@@ -10,17 +10,22 @@
 ## 북디자인 변형의 좋은 예시
 [물고기는 존재하지 않는다](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=284657330)를 예로 들면
 ### 해외 북커버 - [출처](https://www.simonandschuster.com/books/Why-Fish-Dont-Exist/Lulu-Miller/9781501160349)
-![foreign_bookcover_front](img/foreign_bookcover_front.png)
-![foreign_bookcover_back](img/foreign_bookcover_back.png)
+<!-- ![foreign_bookcover_front](img/foreign_bookcover_front.png)-->
+<!-- ![foreign_bookcover_back](img/foreign_bookcover_back.png) -->
+<img src="https://user-images.githubusercontent.com/48875566/170871043-4c95a51e-deb6-4c93-82e5-5901ca642e3f.png"  width="50%" height="50%"/><img src="https://user-images.githubusercontent.com/48875566/170870893-b39b6b6e-05dd-4570-8fda-ed80fb919927.png"  width="50%" height="50%"/>
+
+
+
 ### 국내 북커버 - [출처](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=284657330)
-![korean_bookcover_front](img/korean_bookcover_front.jpg)
-![korean_bookcover_back](img/korean_bookcover_back.jpg)
+<!-- ![korean_bookcover_front](img/korean_bookcover_front.jpg)-->
+<!-- ![korean_bookcover_back](img/korean_bookcover_back.jpg)  -->
+<img src="https://user-images.githubusercontent.com/48875566/170871093-5a742182-23ec-4646-89bb-1ebd31494ac3.jpg"  width="50%" height="100%"/><img src="https://user-images.githubusercontent.com/48875566/170871088-11106a6d-6d40-46f4-9e6c-d67ea2ff7bbf.jpg"  width="50%" height="50%"/>
 
 
 # Document
 
 ## Development Environment
-pass
+Google Apps Script
 
 ## Build and Run
 
