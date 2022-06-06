@@ -11,6 +11,7 @@
   <?!= include("src/csscode"); ?>
 </head>
 
+
 <body>
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
@@ -33,37 +34,104 @@
       </p>
     </div>
   </div>
-
-  <ul class="nav nav-tabs" id="book-tab">
-    <li book="sell" class="active"><a href="#_">추천책</a></li>
-    <!--
-    <li book="share"><a href="#_">공유책</a></li>
-    -->
-    <li book="all"><a href="#_">공개책</a></li>
-
-  </ul>
-  <div class="row">
-    <div class="col-sm-6" style="margin-top:20px;margin-bottom:20px;">
-
-      <div class="btn-group sort-type-group" data-toggle="buttons">
-        <label sort_type="recommend" class="btn btn-default btn-sm active">
-          <input type="radio" name="sort_type" id="sort_type_recommend" autocomplete="off" value="recommend"> 추천순
-        </label>
-        <label sort_type="popular" class="btn btn-default btn-sm">
-          <input type="radio" name="sort_type" id="sort_type_popular" autocomplete="off" value="popular"> 인기순
-        </label>
-        <label sort_type="recent" class="btn btn-default btn-sm">
-          <input type="radio" name="sort_type" id="sort_type_recent" autocomplete="off" value="recent"> 최신순
-        </label>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">리-디자인</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">원본</a>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="col-sm-4" style="margin-top:20px;margin-bottom:20px;">
+        <div class="input-group">
+          <input type="text" id="kw" name="kw" class="form-control input-sm" placeholder="책제목 또는 지은이를 입력하세요">
+          <span class="input-group-btn">
+            <button class="btn btn-primary btn-default" type="button">책검색</button>
+          </span>
+        </div>
       </div>
     </div>
 
-    <div class="col-sm-4" style="margin-top:20px;margin-bottom:20px;">
-      <div class="input-group">
-        <input type="text" id="kw" name="kw" class="form-control input-sm" placeholder="책제목 또는 지은이를 입력하세요">
-        <span class="input-group-btn">
-          <button id="search-book-btn" class="btn btn-sm btn-default" type="button">책검색</button>
-        </span>
+    <div class="tab-content">
+      <div id="books" style="margin-top:10px;">
+
+
+
+
+        <div class="row book-item">
+
+          <div class="col-sm-6" style="margin-bottom:20px;">
+            <div class="media">
+              <div class="media-left">
+                <a href="/book/1">
+                  <div class="book-image-box">
+                    <img src="/images//book/j2p_title_new2_S1JyeeE.jpg" class="book-image">
+                  </div>
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+
+                  <a href="/book/1" class="book-subject">점프 투 파이썬</a>
+                </h4>
+                <div class="book-detail">
+                  <div>
+                    -
+
+                    <a class="menu_link" href="/profile/info/book/3">박응용</a>
+
+                  </div>
+
+                  <div>
+                    - 2022년 05월 15일
+                  </div>
+
+                  <div style="margin-top:0px;">
+                    - <a style="font-size:11px" href="javascript:recommend_book('1')" class="btn btn-default btn-xs"
+                      title="추천"><i class="glyphicon glyphicon-thumbs-up"></i>
+                      <strong>3,974</strong> 명이 추천</a>
+                  </div>
+
+
+                  <div style="margin-top:3px;">
+                    - <a href="/buy/1" class="label label-default label-warning">e-book</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          
+        </div>
+
+
+
+        <div class="row page-area">
+          <input type="hidden" name="total_count" id="total_count" value="75">
+          <input type="hidden" name="current_page" id="current_page" value="1">
+          <input type="hidden" name="per_page" id="per_page" value="10">
+          <input type="hidden" name="page" id="page">
+
+          <div id="pagination" class="col-sm-12" style="margin-top:-10px;">
+            <div class="pagination"><span class="current prev">이전</span><span class="current">1</span><a
+                href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><span>...</span><a href="#"
+                class="ep">8</a><a href="#" class="next">다음</a></div>
+          </div>
+        </div>
+
+
+        <script>
+          $(document).ready(function () {
+            // $(".sort_div").show();
+          });
+
+
+        </script>
       </div>
     </div>
   </div>
