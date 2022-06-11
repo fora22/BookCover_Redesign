@@ -1,0 +1,71 @@
+<script>
+
+    function $F(caller) {
+        var f = arguments.callee.caller;
+        if (caller) f = f.caller;
+        var pat = /^function\s+([a-zA-Z0-9_]+)\s*\(/i;
+        pat.exec(f);
+        var func = new Object();
+        func.name = RegExp.$1;
+        return func;
+    }
+
+    // function loadingStart(loadingId = "loading") {
+    //     document.getElementById(loadingId).classList.remove('d-none');
+    // }
+
+    // function loadingEnd(loadingId = "loading") {
+    //     document.getElementById(loadingId).classList.add('d-none')
+    // }
+
+    function onFailure(err) {
+        alert('There was an error!' + err.message);
+        loadingEnd();
+    }
+
+    function show_books(data_json) {
+        data_json = JSON.parse(data_json);
+
+        // console.log($F().name);
+        // console.log(data_json);
+
+        let books = document.getElementById("books");
+        books.innerHTML = "";
+
+        const book_row_template = document.getElementById("book-row-template");
+        const template = book_row_template.content;
+
+        for (book_id in data_json) {
+            const data = data_json[book_id];
+
+            const name = data.name;
+            const author = data.author;
+            const translator = data.translator;
+            const publisher = data.publisher;
+
+            let date_publish = data.date_publish;
+            const dates = date_publish.split("T")[0].split("-")
+            date_publish = dates[0] + "년 " + dates[1] + "월 " + dates[2] + "일"
+
+            const link = data.link;
+
+            let tr = template.cloneNode(true);
+
+            let book_name = tr.querySelector(".book-name");
+            let book_author = tr.querySelector(".book-author");
+            let book_translator = tr.querySelector(".book-translator");
+            let book_publisher = tr.querySelector(".book-publisher");
+            let book_date_publish = tr.querySelector(".book-date_publish");
+            
+            book_name.textContent = name;
+            book_author.textContent = author;
+            book_translator.textContent = translator;
+            book_publisher.textContent = publisher;
+            book_date_publish.textContent = date_publish;
+
+            books.appendChild(tr);
+        }
+    }
+
+    google.script.run.withSuccessHandler(show_books).withFailureHandler(onFailure).get_book_info(); 
+</script>

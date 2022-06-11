@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <?!= include("src/csscode"); ?>
+  <?!= include("src/cssCode"); ?>
 </head>
 
 
@@ -21,7 +21,7 @@
         </a>
         <span class="text-warning" style="font-size:12px;font-weight:normal;color:orange">
           <span class="glyphicon glyphicon-volume-up"></span>
-          나뚜, 최고의 디자이너! 최고의 사랑꾼!
+          나뚜, 최고의 디자이너! 최고의 이쁘니!
         </span>
       </div>
     </div>
@@ -54,88 +54,58 @@
       </div>
     </div>
 
+    <template id="book-row-template">
+    <div class="row book-item">
+
+      <div class="col-sm-6" style="margin-bottom:20px;">
+        <div class="media">
+          <div class="media-left">
+            <a>
+              <div class="book-image-box">
+                <img class="book-image">
+              </div>
+            </a>
+          </div>
+
+          <div class="media-body">
+            <h4 class="media-heading">
+
+              <a class="book-name"></a>
+            </h4>
+            <div class="book-detail">
+              
+              <div>
+                -
+                <a class="book-author"></a>
+                
+              </div>
+              <div>
+                -
+                <a class="book-translator"></a>
+              </div>
+              <div>
+                -
+                <a class="book-publisher"></a>
+              </div>
+              <div>
+                - 
+                <a class="book-date_publish"></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
     <div class="tab-content">
       <div id="books" style="margin-top:10px;">
 
-
-
-
-        <div class="row book-item">
-
-          <div class="col-sm-6" style="margin-bottom:20px;">
-            <div class="media">
-              <div class="media-left">
-                <a href="/book/1">
-                  <div class="book-image-box">
-                    <img src="/images//book/j2p_title_new2_S1JyeeE.jpg" class="book-image">
-                  </div>
-                </a>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">
-
-                  <a href="/book/1" class="book-subject">점프 투 파이썬</a>
-                </h4>
-                <div class="book-detail">
-                  <div>
-                    -
-
-                    <a class="menu_link" href="/profile/info/book/3">박응용</a>
-
-                  </div>
-
-                  <div>
-                    - 2022년 05월 15일
-                  </div>
-
-                  <div style="margin-top:0px;">
-                    - <a style="font-size:11px" href="javascript:recommend_book('1')" class="btn btn-default btn-xs"
-                      title="추천"><i class="glyphicon glyphicon-thumbs-up"></i>
-                      <strong>3,974</strong> 명이 추천</a>
-                  </div>
-
-
-                  <div style="margin-top:3px;">
-                    - <a href="/buy/1" class="label label-default label-warning">e-book</a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          
-        </div>
-
-
-
-        <div class="row page-area">
-          <input type="hidden" name="total_count" id="total_count" value="75">
-          <input type="hidden" name="current_page" id="current_page" value="1">
-          <input type="hidden" name="per_page" id="per_page" value="10">
-          <input type="hidden" name="page" id="page">
-
-          <div id="pagination" class="col-sm-12" style="margin-top:-10px;">
-            <div class="pagination"><span class="current prev">이전</span><span class="current">1</span><a
-                href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><span>...</span><a href="#"
-                class="ep">8</a><a href="#" class="next">다음</a></div>
-          </div>
-        </div>
-
-
-        <script>
-          $(document).ready(function () {
-            // $(".sort_div").show();
-          });
-
-
-        </script>
       </div>
     </div>
   </div>
-
+  <?!= include("src/showTable"); ?>
 
 </body>
 
