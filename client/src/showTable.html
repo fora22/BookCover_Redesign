@@ -1,28 +1,4 @@
 <script>
-
-    function $F(caller) {
-        var f = arguments.callee.caller;
-        if (caller) f = f.caller;
-        var pat = /^function\s+([a-zA-Z0-9_]+)\s*\(/i;
-        pat.exec(f);
-        var func = new Object();
-        func.name = RegExp.$1;
-        return func;
-    }
-
-    // function loadingStart(loadingId = "loading") {
-    //     document.getElementById(loadingId).classList.remove('d-none');
-    // }
-
-    // function loadingEnd(loadingId = "loading") {
-    //     document.getElementById(loadingId).classList.add('d-none')
-    // }
-
-    function onFailure(err) {
-        alert('There was an error!' + err.message);
-        loadingEnd();
-    }
-
     function show_books(data_json) {
         data_json = JSON.parse(data_json);
 
@@ -51,6 +27,10 @@
 
             let tr = template.cloneNode(true);
 
+            console.log(data.recover_front_link);
+            let book_img = tr.querySelector(".book-image");
+            book_img.src = data.recover_front_link;
+
             let book_name = tr.querySelector(".book-name");
             let book_author = tr.querySelector(".book-author");
             let book_translator = tr.querySelector(".book-translator");
@@ -67,5 +47,4 @@
         }
     }
 
-    google.script.run.withSuccessHandler(show_books).withFailureHandler(onFailure).get_book_info(); 
 </script>

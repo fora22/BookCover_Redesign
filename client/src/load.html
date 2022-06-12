@@ -1,0 +1,31 @@
+<script>
+    function $F(caller) {
+        var f = arguments.callee.caller;
+        if (caller) f = f.caller;
+        var pat = /^function\s+([a-zA-Z0-9_]+)\s*\(/i;
+        pat.exec(f);
+        var func = new Object();
+        func.name = RegExp.$1;
+        return func;
+    }
+
+    // function loadingStart(loadingId = "loading") {
+    //     document.getElementById(loadingId).classList.remove('d-none');
+    // }
+
+    // function loadingEnd(loadingId = "loading") {
+    //     document.getElementById(loadingId).classList.add('d-none')
+    // }
+
+    function onFailure(err) {
+        alert('There was an error!' + err.message);
+        loadingEnd();
+    }
+
+    function loadEventHandler(e) {
+        google.script.run.withSuccessHandler(show_books).withFailureHandler(onFailure).get_book_info(); 
+    }
+
+    document.addEventListener("DOMContentLoaded", loadEventHandler);
+
+</script>
